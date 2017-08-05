@@ -26,7 +26,6 @@ class Taunts:
             self.path = input()
             self.check_installation()
 
-
     def play_sound(self, repeat=.2):
         """Play sound"""
         path_list = os.listdir(self.path)
