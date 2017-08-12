@@ -7,6 +7,7 @@ class Taunts:
     """Main method to run"""
 
     path = "C:/Program Files (x86)/Steam/steamapps/common/Age2HD/resources/en/sound/taunt"
+    name = "..."
 
     def main(self):
         """Running mathod"""
@@ -15,13 +16,16 @@ class Taunts:
 
     def check_installation(self):
         """Check if folder is correct"""
+        print("Name nick : ", end='')
+        self.name = input()
+
         if os.path.isdir(self.path) and os.path.exists(self.path + "/01 yes.mp3"):
             print("AoE folder loaded")
             print(os.listdir(self.path))
             print(os.path.isdir(self.path))
         else:
             print("Paste AoE/resources/en/sound/taunt folder -> ")
-            print("Default path : {}".format(
+            print("Default path (steam): {}".format(
                 "C:/Program Files (x86)/Steam/steamapps/common/Age2HD/resources/en/sound/taunt"))
             self.path = input()
             self.check_installation()
@@ -37,7 +41,7 @@ class Taunts:
                 my_list.insert(i, path_list[i][0:2])
 
         while True:
-            print("...", end=' : ')
+            print(self.name, end=' : ')
             try:
                 value = input()
                 sound_to_play = value
